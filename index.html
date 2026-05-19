@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Toki Trading - 日本から中国向け健康食品・サプリメントの卸販売、留学・不動産コンサルティング、及び日本医療ツーリズムをワンストップで提供。">
+    <meta name="description" content="三友株式会社 - 日本から中国向け健康食品・サプリメントの卸販売、留学・不動産コンサルティング、及び日本医療ツーリズムをワンストップで提供。">
     <meta name="keywords" content="日本貿易, 健康食品輸出, 留学相談, 不動産, 日本医療, 医療渡航">
-    <title>Toki Trading | 日本発、中国向け総合貿易・コンサルティング</title>
+    <title>三友株式会社 | 日本発、中国向け総合貿易・コンサルティング</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
@@ -262,7 +262,7 @@
             border-radius: 2px;
         }
 
-        /* ヒーローエリア（背景画像＋グラデーション） */
+        /* ヒーローエリア */
         .hero {
             height: 75vh;
             min-height: 450px;
@@ -528,7 +528,7 @@
             transform: scale(1.02);
         }
 
-        /* 数字セクション（事業の下に移動） */
+        /* 数字セクション */
         .stats {
             background: linear-gradient(135deg, #0b3d5f 0%, #155d82 100%);
             padding: 50px 0;
@@ -567,6 +567,54 @@
             font-size: 1.4rem;
             margin-bottom: 8px;
             color: #ffd166;
+        }
+
+        /* ライセンス / 許認可セクション */
+        .licenses {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .licenses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .license-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #eef2f7;
+            transition: transform 0.3s;
+        }
+
+        .license-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .license-img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background: #f9fbfc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .license-title {
+            font-weight: 600;
+            color: #1a3c4a;
+            font-size: 0.95rem;
         }
 
         /* 会社概要 */
@@ -784,6 +832,14 @@
                 padding: 60px 0;
             }
 
+            .licenses {
+                padding: 60px 0;
+            }
+
+            .licenses-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .stats {
                 padding: 36px 0;
             }
@@ -834,6 +890,9 @@
             .about-features {
                 grid-template-columns: 1fr 1fr;
             }
+            .licenses-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -841,7 +900,7 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <i class="fas fa-globe-asia"></i> Toki<span>Trading</span>
+                <i class="fas fa-globe-asia"></i> 三友<span>株式会社</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home"><i class="fas fa-home"></i> <span data-i18n="navHome">ホーム</span></a></li>
@@ -884,7 +943,7 @@
         </div>
     </section>
 
-    <!-- 事業内容セクション (先に表示) -->
+    <!-- 事業内容セクション -->
     <section id="business" class="business">
         <div class="container">
             <div class="section-header">
@@ -921,7 +980,7 @@
         </div>
     </section>
 
-    <!-- 数字セクション (事業内容の下に移動) -->
+    <!-- 数字セクション -->
     <div class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -949,6 +1008,37 @@
         </div>
     </div>
 
+    <!-- ライセンス・許認可セクション -->
+    <section class="licenses">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">
+                    <i class="fas fa-certificate"></i> <span data-i18n="licenseLabel">LICENSES</span>
+                </div>
+                <h2 class="section-title" data-i18n="licenseTitle">許認可・登録情報</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="licenses-grid">
+                <div class="license-item">
+                    <div class="license-img" data-i18n="license1Placeholder">【貿易許可証画像】</div>
+                    <div class="license-title" data-i18n="license1Name">貿易許可証</div>
+                </div>
+                <div class="license-item">
+                    <div class="license-img" data-i18n="license2Placeholder">【食品衛生許可画像】</div>
+                    <div class="license-title" data-i18n="license2Name">食品衛生許可証</div>
+                </div>
+                <div class="license-item">
+                    <div class="license-img" data-i18n="license3Placeholder">【留学仲介認可画像】</div>
+                    <div class="license-title" data-i18n="license3Name">留学仲介認可証</div>
+                </div>
+                <div class="license-item">
+                    <div class="license-img" data-i18n="license4Placeholder">【医療コーディネート認可画像】</div>
+                    <div class="license-title" data-i18n="license4Name">医療渡航支援登録証</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 会社概要セクション -->
     <section id="about" class="about">
         <div class="container">
@@ -960,7 +1050,7 @@
                 <div class="section-divider"></div>
             </div>
             <div class="about-content">
-                <p data-i18n="aboutP1">Toki Trading は、「日本の質を、世界へ」をミッションに掲げ、日本と中国の架け橋となる総合貿易・コンサルティング企業です。</p>
+                <p data-i18n="aboutP1">三友株式会社 は、「日本の質を、世界へ」をミッションに掲げ、日本と中国の架け橋となる総合貿易・コンサルティング企業です。</p>
                 <p data-i18n="aboutP2">健康食品輸出、留学・不動産支援、医療ツーリズムの3事業を中核に、お客様一人ひとりに寄り添った高品質なサービスを提供。日本各地の信頼できるパートナーとともに、確かな実績を積み重ねています。</p>
                 <div class="about-features">
                     <div class="about-feature">
@@ -980,7 +1070,7 @@
                         <h4 data-i18n="aboutFeat4">信頼のネットワーク</h4>
                     </div>
                 </div>
-                <p style="margin-top: 30px; font-weight: 600; color: #0066a1; font-size: 0.9rem;" data-i18n="aboutP3">東京都中央区所在 | 貿易登録番号：TK-000000</p>
+                <p style="margin-top: 30px; font-weight: 600; color: #0066a1; font-size: 0.9rem;" data-i18n="aboutP3">東京都豊島区所在 | 貿易登録番号：TK-000000</p>
             </div>
         </div>
     </section>
@@ -990,10 +1080,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4><i class="fas fa-globe-asia"></i> Toki Trading</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footerAddr">〒104-0000 東京都中央区銀座1-2-3<br>　トキトレーディングビル5F</span></p>
+                    <h4><i class="fas fa-globe-asia"></i> 三友株式会社</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footerAddr">〒170-0002 東京都豊島区巢鴨四丁目22番4号</span></p>
                     <p><i class="fas fa-phone-alt"></i> <span data-i18n="footerTel">TEL: 03-0000-0000</span></p>
-                    <p><i class="fas fa-envelope"></i> <span data-i18n="footerEmail">Email: info@tokitrading.co.jp</span></p>
+                    <p><i class="fas fa-envelope"></i> <span data-i18n="footerEmail">Email: info@sanyo-trading.co.jp</span></p>
                     <p><i class="fas fa-clock"></i> <span data-i18n="footerHours">営業時間: 10:00〜18:00 (土日祝除く)</span></p>
                 </div>
                 <div class="footer-col">
@@ -1023,7 +1113,7 @@
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2026 Toki Trading. All Rights Reserved.
+                &copy; 2026 三友株式会社. All Rights Reserved.
             </div>
         </div>
     </footer>
@@ -1063,18 +1153,28 @@
                 biz3Img: '日本医療イメージ',
                 biz3Title: '日本医療ツーリズム（赴日医療）',
                 biz3Desc: '日本の高度医療機関とのネットワークを活かし、中国人患者様の渡航手配、医療機関選定、通訳手配、滞在サポートまで一貫して提供。健康診断、治療、再生医療など幅広いニーズに対応いたします。',
+                licenseLabel: 'LICENSES',
+                licenseTitle: '許認可・登録情報',
+                license1Placeholder: '【貿易許可証画像】',
+                license1Name: '貿易許可証',
+                license2Placeholder: '【食品衛生許可画像】',
+                license2Name: '食品衛生許可証',
+                license3Placeholder: '【留学仲介認可画像】',
+                license3Name: '留学仲介認可証',
+                license4Placeholder: '【医療コーディネート認可画像】',
+                license4Name: '医療渡航支援登録証',
                 aboutLabel: 'ABOUT US',
                 aboutTitle: '会社概要',
-                aboutP1: 'Toki Trading は、「日本の質を、世界へ」をミッションに掲げ、日本と中国の架け橋となる総合貿易・コンサルティング企業です。',
+                aboutP1: '三友株式会社 は、「日本の質を、世界へ」をミッションに掲げ、日本と中国の架け橋となる総合貿易・コンサルティング企業です。',
                 aboutP2: '健康食品輸出、留学・不動産支援、医療ツーリズムの3事業を中核に、お客様一人ひとりに寄り添った高品質なサービスを提供。日本各地の信頼できるパートナーとともに、確かな実績を積み重ねています。',
                 aboutFeat1: '安心の品質管理',
                 aboutFeat2: '多言語サポート',
                 aboutFeat3: '迅速な対応',
                 aboutFeat4: '信頼のネットワーク',
-                aboutP3: '東京都中央区所在 | 貿易登録番号：TK-000000',
-                footerAddr: '〒104-0000 東京都中央区銀座1-2-3<br>　トキトレーディングビル5F',
+                aboutP3: '東京都豊島区所在 | 貿易登録番号：TK-000000',
+                footerAddr: '〒170-0002 東京都豊島区巢鴨四丁目22番4号',
                 footerTel: 'TEL: 03-0000-0000',
-                footerEmail: 'Email: info@tokitrading.co.jp',
+                footerEmail: 'Email: info@sanyo-trading.co.jp',
                 footerHours: '営業時間: 10:00〜18:00 (土日祝除く)',
                 footerBiz: '事業案内',
                 footerBiz1: '健康食品卸',
@@ -1120,18 +1220,28 @@
                 biz3Img: '日本医疗概念图',
                 biz3Title: '日本医疗旅游（赴日医疗）',
                 biz3Desc: '利用与日本先进医疗机构的网络，为中国患者提供境外出行的安排、医疗机构选择、翻译陪同、停留支持等一站式服务。满足体检、治疗、再生医疗等广泛需求。',
+                licenseLabel: 'LICENSES',
+                licenseTitle: '许可・注册信息',
+                license1Placeholder: '【贸易许可证图片】',
+                license1Name: '贸易许可证',
+                license2Placeholder: '【食品卫生许可图片】',
+                license2Name: '食品卫生许可证',
+                license3Placeholder: '【留学中介认可图片】',
+                license3Name: '留学中介认可证',
+                license4Placeholder: '【医疗协调认可图片】',
+                license4Name: '医疗出行支援注册证',
                 aboutLabel: 'ABOUT US',
                 aboutTitle: '公司简介',
-                aboutP1: 'Toki Trading 以"将日本的品质，带给世界"为使命，成为连接日本与中国的综合性贸易与咨询公司。',
+                aboutP1: '三友株式会社以“将日本的品质，带给世界”为使命，成为连接日本与中国的综合性贸易与咨询公司。',
                 aboutP2: '以健康食品出口、留学·不动产支援、医疗旅游三大事业为核心，贴近每位客户，提供高品质服务。与日本各地值得信赖的伙伴一起，积累着扎实的业绩。',
                 aboutFeat1: '安心的品质管理',
                 aboutFeat2: '多语言支持',
                 aboutFeat3: '快速响应',
                 aboutFeat4: '信赖的网络',
-                aboutP3: '位于东京都中央区 | 贸易注册号：TK-000000',
-                footerAddr: '〒104-0000 东京都中央区银座1-2-3<br>　Toki Trading大厦5楼',
+                aboutP3: '位于东京都丰岛区 | 贸易注册号：TK-000000',
+                footerAddr: '〒170-0002 东京都丰岛区巢鸭四丁目22番4号',
                 footerTel: '电话: 03-0000-0000',
-                footerEmail: '邮箱: info@tokitrading.co.jp',
+                footerEmail: '邮箱: info@sanyo-trading.co.jp',
                 footerHours: '营业时间: 10:00〜18:00 (周末节假日除外)',
                 footerBiz: '业务导航',
                 footerBiz1: '健康食品批发',
@@ -1177,18 +1287,28 @@
                 biz3Img: 'Medical Tourism Concept',
                 biz3Title: 'Japan Medical Tourism (Inbound Medical Care)',
                 biz3Desc: 'One-stop service for Chinese patients: travel arrangement, hospital selection, interpreter arrangement and stay support, leveraging our network with advanced Japanese medical institutions. Covering health screenings, treatments, regenerative medicine, and more.',
+                licenseLabel: 'LICENSES',
+                licenseTitle: 'Licenses & Registrations',
+                license1Placeholder: '[Trade License Image]',
+                license1Name: 'Trade License',
+                license2Placeholder: '[Food Hygiene License Image]',
+                license2Name: 'Food Hygiene License',
+                license3Placeholder: '[Study Abroad Agency License Image]',
+                license3Name: 'Study Abroad Agency License',
+                license4Placeholder: '[Medical Coordination License Image]',
+                license4Name: 'Medical Travel Support Registration',
                 aboutLabel: 'ABOUT US',
                 aboutTitle: 'About Us',
-                aboutP1: 'Toki Trading is a comprehensive trading and consulting company bridging Japan and China with the mission of "Bringing Japanese Quality to the World".',
+                aboutP1: 'Sanyo Co., Ltd. is a comprehensive trading and consulting company bridging Japan and China with the mission of "Bringing Japanese Quality to the World".',
                 aboutP2: 'Centered on three businesses: health food export, study/real estate support, and medical tourism, we deliver high-quality services tailored to each client, building solid achievements with trusted partners across Japan.',
                 aboutFeat1: 'Quality Assurance',
                 aboutFeat2: 'Multilingual Support',
                 aboutFeat3: 'Fast Response',
                 aboutFeat4: 'Trusted Network',
-                aboutP3: 'Headquarters in Chuo-ku, Tokyo | Trade Registration: TK-000000',
-                footerAddr: '1-2-3 Ginza, Chuo-ku, Tokyo 104-0000<br>　Toki Trading Building 5F',
+                aboutP3: 'Headquarters in Toshima-ku, Tokyo | Trade Registration: TK-000000',
+                footerAddr: '4-22-4 Sugamo, Toshima-ku, Tokyo 170-0002',
                 footerTel: 'Tel: +81-3-0000-0000',
-                footerEmail: 'Email: info@tokitrading.co.jp',
+                footerEmail: 'Email: info@sanyo-trading.co.jp',
                 footerHours: 'Hours: 10:00-18:00 (Weekdays)',
                 footerBiz: 'Services',
                 footerBiz1: 'Health Food Export',
