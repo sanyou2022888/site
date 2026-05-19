@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Toki Trading - 日本から中国向け健康食品・サプリメントの卸販売、留学・不動産コンサルティング、及び日本医療ツーリズムをワンストップで提供。">
+    <meta name="keywords" content="日本貿易, 健康食品輸出, 留学相談, 不動産, 日本医療, 医療渡航">
+    <title>Toki Trading | 日本発、中国向け総合貿易・コンサルティング</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #fafbfc;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ナビゲーション */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #1a3c4a;
+            text-decoration: none;
+            white-space: nowrap;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            color: #0066a1;
+            font-size: 1.6rem;
+        }
+
+        .logo span {
+            color: #0066a1;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+            margin-right: 25px;
+        }
+
+        .nav-links li {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 0.92rem;
+            white-space: nowrap;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 0;
+            position: relative;
+        }
+
+        .nav-links a i {
+            font-size: 0.85rem;
+            color: #0066a1;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0066a1;
+        }
+
+        .nav-links a:hover i {
+            opacity: 1;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0066a1;
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* 言語切替ドロップダウン */
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-btn-main {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f5f7fa;
+            border: 1px solid #dde4ec;
+            padding: 8px 14px;
+            font-size: 0.82rem;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #444;
+            transition: all 0.3s;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .lang-btn-main:hover {
+            background: #e8ecf2;
+            border-color: #0066a1;
+        }
+
+        .lang-btn-main i {
+            font-size: 0.95rem;
+            color: #0066a1;
+        }
+
+        .lang-btn-main .fa-chevron-down {
+            font-size: 0.65rem;
+            margin-left: 2px;
+            transition: transform 0.3s;
+        }
+
+        .lang-dropdown.open .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: white;
+            border: 1px solid #e0e6ed;
+            border-radius: 8px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+            list-style: none;
+            min-width: 140px;
+            display: none;
+            z-index: 1001;
+            overflow: hidden;
+        }
+
+        .lang-menu.show {
+            display: block;
+            animation: fadeInDown 0.2s ease;
+        }
+
+        .lang-menu li {
+            border-bottom: 1px solid #f2f4f7;
+        }
+
+        .lang-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .lang-menu button {
+            width: 100%;
+            padding: 11px 16px;
+            border: none;
+            background: white;
+            text-align: left;
+            cursor: pointer;
+            font-size: 0.88rem;
+            transition: all 0.2s;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-menu button::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+            flex-shrink: 0;
+        }
+
+        .lang-menu button:hover {
+            background: #f5f8fb;
+        }
+
+        .lang-menu button.active-lang {
+            background: #e8f2f9;
+            color: #0066a1;
+            font-weight: 700;
+        }
+
+        .lang-menu button.active-lang::before {
+            background: #0066a1;
+            box-shadow: 0 0 0 3px rgba(0,102,161,0.2);
+        }
+
+        /* ハンバーガーメニュー */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1100;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            background: #333;
+            height: 2px;
+            width: 24px;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* ヒーローエリア（背景画像＋グラデーション） */
+        .hero {
+            height: 75vh;
+            min-height: 450px;
+            background: linear-gradient(135deg, rgba(8, 45, 68, 0.78) 0%, rgba(20, 80, 110, 0.84) 100%),
+                        url('img/img1.jpg');
+            background-size: cover;
+            background-position: center 40%;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-badge i {
+            color: #ffd166;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            opacity: 0.92;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: #0066a1;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid #0066a1;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary:hover {
+            background: #005288;
+            border-color: #005288;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,102,161,0.35);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 事業セクション */
+        .business {
+            padding: 90px 0;
+            background: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e8f2f9;
+            color: #0066a1;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-label i {
+            font-size: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #1a3c4a;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: #7a8a95;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
+        .section-divider {
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #0066a1, #4da8da);
+            margin: 16px auto 0;
+            border-radius: 3px;
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 28px;
+        }
+
+        .business-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px 28px 32px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #eef2f7;
+            transition: all 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #0066a1, #4da8da);
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
+
+        .business-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-color: #d0dde8;
+        }
+
+        .business-card:hover::before {
+            opacity: 1;
+        }
+
+        .business-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: #f0f6fb;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .business-card:hover .business-icon-wrap {
+            background: #0066a1;
+            transform: scale(1.05);
+        }
+
+        .business-icon-wrap i {
+            font-size: 1.8rem;
+            color: #0066a1;
+            transition: color 0.3s;
+        }
+
+        .business-card:hover .business-icon-wrap i {
+            color: white;
+        }
+
+        .business-card .tag {
+            display: inline-block;
+            background: #f5f7fa;
+            color: #6b8299;
+            font-size: 0.72rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .business-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            color: #1a3c4a;
+            font-weight: 700;
+        }
+
+        .business-card p {
+            color: #6b7d8e;
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+
+        .business-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .business-card:hover .business-img {
+            transform: scale(1.02);
+        }
+
+        /* 数字セクション（事業の下に移動） */
+        .stats {
+            background: linear-gradient(135deg, #0b3d5f 0%, #155d82 100%);
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .stat-number span {
+            color: #ffd166;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-icon {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: #ffd166;
+        }
+
+        /* 会社概要 */
+        .about {
+            background-color: #f8fafc;
+            padding: 90px 0;
+        }
+
+        .about-content {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 18px;
+            color: #4a5b68;
+            font-size: 1rem;
+            line-height: 2;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            margin-top: 36px;
+        }
+
+        .about-feature {
+            background: white;
+            padding: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+            border: 1px solid #eef2f7;
+            transition: transform 0.3s;
+        }
+
+        .about-feature:hover {
+            transform: translateY(-4px);
+        }
+
+        .about-feature i {
+            font-size: 1.6rem;
+            color: #0066a1;
+            margin-bottom: 8px;
+        }
+
+        .about-feature h4 {
+            font-size: 0.9rem;
+            color: #1a3c4a;
+            font-weight: 600;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #0a2f40;
+            color: #bcc9d4;
+            padding: 60px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+            margin-bottom: 35px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 18px;
+            font-size: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col h4 i {
+            color: #ffd166;
+            font-size: 0.9rem;
+        }
+
+        .footer-col p,
+        .footer-col li {
+            color: #9aafbe;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-col p i,
+        .footer-col li i {
+            width: 18px;
+            margin-right: 6px;
+            color: #5a8fa8;
+            font-size: 0.8rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #9aafbe;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-col ul li a i {
+            font-size: 0.65rem;
+            color: #5a8fa8;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 4px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 22px;
+            color: #7a95a5;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 260px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                gap: 1.2rem;
+                padding: 100px 30px 30px;
+                box-shadow: -5px 0 25px rgba(0,0,0,0.12);
+                transition: right 0.35s ease;
+                display: flex;
+                margin-right: 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .hero {
+                height: 60vh;
+                min-height: 380px;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 6px 14px;
+            }
+            .btn-primary, .btn-outline {
+                padding: 12px 24px;
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .business-card {
+                padding: 28px 20px;
+            }
+
+            .business {
+                padding: 60px 0;
+            }
+
+            .about {
+                padding: 60px 0;
+            }
+
+            .stats {
+                padding: 36px 0;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+
+            .nav-actions {
+                gap: 10px;
+            }
+
+            .lang-btn-main {
+                padding: 6px 10px;
+                font-size: 0.78rem;
+                gap: 4px;
+            }
+
+            .lang-menu {
+                right: -10px;
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.7rem;
+                letter-spacing: 1px;
+            }
+            .hero-content p {
+                font-size: 0.85rem;
+            }
+            .business-img {
+                height: 160px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-features {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-globe-asia"></i> Toki<span>Trading</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home"><i class="fas fa-home"></i> <span data-i18n="navHome">ホーム</span></a></li>
+                <li><a href="#business"><i class="fas fa-briefcase"></i> <span data-i18n="navBusiness">事業内容</span></a></li>
+                <li><a href="#about"><i class="fas fa-building"></i> <span data-i18n="navAbout">会社概要</span></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-i18n="navContact">お問い合わせ</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-btn-main" id="langBtnMain">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLangLabel">JA</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="lang-menu" id="langMenu">
+                        <li><button data-lang="ja" class="active-lang">日本語</button></li>
+                        <li><button data-lang="zh">中文</button></li>
+                        <li><button data-lang="en">English</button></li>
+                    </ul>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローエリア -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i> <span data-i18n="heroBadge">信頼の総合貿易パートナー</span>
+            </div>
+            <h1 data-i18n="heroTitle">日本と中国を、確かな架け橋で結ぶ</h1>
+            <p data-i18n="heroSub">健康食品輸出・留学不動産コンサル・医療渡航支援</p>
+            <div class="hero-buttons">
+                <a href="#business" class="btn-primary"><i class="fas fa-arrow-down"></i> <span data-i18n="heroBtn1">事業を見る</span></a>
+                <a href="#contact" class="btn-outline"><i class="fas fa-comment"></i> <span data-i18n="heroBtn2">お問い合わせ</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 事業内容セクション (先に表示) -->
+    <section id="business" class="business">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">
+                    <i class="fas fa-circle"></i> <span data-i18n="bizLabel">OUR SERVICES</span>
+                </div>
+                <h2 class="section-title" data-i18n="bizTitle">事業内容</h2>
+                <p class="section-subtitle" data-i18n="bizSub">3つの柱でビジネスを展開しています</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="business-grid">
+                <div class="business-card">
+                    <div class="business-icon-wrap"><i class="fas fa-pills"></i></div>
+                    <span class="tag" data-i18n="biz1Tag">輸出入・卸販売</span>
+                    <img class="business-img" src="img/img2.jpg" alt="健康食品イメージ" data-i18n-alt="biz1Img">
+                    <h3 data-i18n="biz1Title">健康食品・サプリメント卸販売</h3>
+                    <p data-i18n="biz1Desc">日本国内の厳選された健康食品、機能性表示食品、サプリメントを中国市場向けに輸出・卸販売。品質管理体制が整ったメーカーとの強固なネットワークで、安心・安全な商品を安定供給いたします。</p>
+                </div>
+                <div class="business-card">
+                    <div class="business-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+                    <span class="tag" data-i18n="biz2Tag">コンサルティング</span>
+                    <img class="business-img" src="img/img3.jpg" alt="留学・不動産イメージ" data-i18n-alt="biz2Img">
+                    <h3 data-i18n="biz2Title">留学・不動産コンサルティング</h3>
+                    <p data-i18n="biz2Desc">日本への留学手続きサポート、学校選定、ビザ相談をはじめ、投資用・居住用不動産の物件紹介、購入手続きまでトータルにサポート。現地提携パートナーと連携し、日本での新生活を全面的にバックアップします。</p>
+                </div>
+                <div class="business-card">
+                    <div class="business-icon-wrap"><i class="fas fa-stethoscope"></i></div>
+                    <span class="tag" data-i18n="biz3Tag">医療渡航支援</span>
+                    <img class="business-img" src="img/img4.jpg" alt="日本医療イメージ" data-i18n-alt="biz3Img">
+                    <h3 data-i18n="biz3Title">日本医療ツーリズム（赴日医療）</h3>
+                    <p data-i18n="biz3Desc">日本の高度医療機関とのネットワークを活かし、中国人患者様の渡航手配、医療機関選定、通訳手配、滞在サポートまで一貫して提供。健康診断、治療、再生医療など幅広いニーズに対応いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数字セクション (事業内容の下に移動) -->
+    <div class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="stat-number"><span data-i18n="stat1Num">200</span>+</div>
+                    <div class="stat-label" data-i18n="stat1Label">取引先企業</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-box"></i></div>
+                    <div class="stat-number"><span data-i18n="stat2Num">5000</span>+</div>
+                    <div class="stat-label" data-i18n="stat2Label">取扱商品数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="stat-number"><span data-i18n="stat3Num">800</span>+</div>
+                    <div class="stat-label" data-i18n="stat3Label">留学支援実績</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-hospital"></i></div>
+                    <div class="stat-number"><span data-i18n="stat4Num">150</span>+</div>
+                    <div class="stat-label" data-i18n="stat4Label">提携医療機関</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 会社概要セクション -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">
+                    <i class="fas fa-circle"></i> <span data-i18n="aboutLabel">ABOUT US</span>
+                </div>
+                <h2 class="section-title" data-i18n="aboutTitle">会社概要</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-content">
+                <p data-i18n="aboutP1">Toki Trading は、「日本の質を、世界へ」をミッションに掲げ、日本と中国の架け橋となる総合貿易・コンサルティング企業です。</p>
+                <p data-i18n="aboutP2">健康食品輸出、留学・不動産支援、医療ツーリズムの3事業を中核に、お客様一人ひとりに寄り添った高品質なサービスを提供。日本各地の信頼できるパートナーとともに、確かな実績を積み重ねています。</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <h4 data-i18n="aboutFeat1">安心の品質管理</h4>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-headset"></i>
+                        <h4 data-i18n="aboutFeat2">多言語サポート</h4>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-clock"></i>
+                        <h4 data-i18n="aboutFeat3">迅速な対応</h4>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4 data-i18n="aboutFeat4">信頼のネットワーク</h4>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-weight: 600; color: #0066a1; font-size: 0.9rem;" data-i18n="aboutP3">東京都中央区所在 | 貿易登録番号：TK-000000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4><i class="fas fa-globe-asia"></i> Toki Trading</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footerAddr">〒104-0000 東京都中央区銀座1-2-3<br>　トキトレーディングビル5F</span></p>
+                    <p><i class="fas fa-phone-alt"></i> <span data-i18n="footerTel">TEL: 03-0000-0000</span></p>
+                    <p><i class="fas fa-envelope"></i> <span data-i18n="footerEmail">Email: info@tokitrading.co.jp</span></p>
+                    <p><i class="fas fa-clock"></i> <span data-i18n="footerHours">営業時間: 10:00〜18:00 (土日祝除く)</span></p>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fas fa-list"></i> <span data-i18n="footerBiz">事業案内</span></h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="footerBiz1">健康食品卸</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="footerBiz2">留学・不動産サポート</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="footerBiz3">医療ツーリズム</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fas fa-info-circle"></i> <span data-i18n="footerInfo">各種情報</span></h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="footerPrivacy">プライバシーポリシー</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="footerLegal">特定商取引法に基づく表記</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="footerContactLink">お問い合わせ</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fas fa-qrcode"></i> <span data-i18n="footerFollow">公式アカウント</span></h4>
+                    <p style="margin-bottom: 8px;" data-i18n="footerSocialText">各種SNSで最新情報を発信中</p>
+                    <div style="display:flex;gap:12px;font-size:1.3rem;margin-top:8px;">
+                        <a href="#" style="color:#9aafbe;transition:color 0.3s;"><i class="fab fa-weixin"></i></a>
+                        <a href="#" style="color:#9aafbe;transition:color 0.3s;"><i class="fab fa-weibo"></i></a>
+                        <a href="#" style="color:#9aafbe;transition:color 0.3s;"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Toki Trading. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            ja: {
+                navHome: 'ホーム',
+                navBusiness: '事業内容',
+                navAbout: '会社概要',
+                navContact: 'お問い合わせ',
+                heroBadge: '信頼の総合貿易パートナー',
+                heroTitle: '日本と中国を、確かな架け橋で結ぶ',
+                heroSub: '健康食品輸出・留学不動産コンサル・医療渡航支援',
+                heroBtn1: '事業を見る',
+                heroBtn2: 'お問い合わせ',
+                stat1Num: '200',
+                stat1Label: '取引先企業',
+                stat2Num: '5000',
+                stat2Label: '取扱商品数',
+                stat3Num: '800',
+                stat3Label: '留学支援実績',
+                stat4Num: '150',
+                stat4Label: '提携医療機関',
+                bizLabel: 'OUR SERVICES',
+                bizTitle: '事業内容',
+                bizSub: '3つの柱でビジネスを展開しています',
+                biz1Tag: '輸出入・卸販売',
+                biz1Img: '健康食品イメージ',
+                biz1Title: '健康食品・サプリメント卸販売',
+                biz1Desc: '日本国内の厳選された健康食品、機能性表示食品、サプリメントを中国市場向けに輸出・卸販売。品質管理体制が整ったメーカーとの強固なネットワークで、安心・安全な商品を安定供給いたします。',
+                biz2Tag: 'コンサルティング',
+                biz2Img: '留学・不動産イメージ',
+                biz2Title: '留学・不動産コンサルティング',
+                biz2Desc: '日本への留学手続きサポート、学校選定、ビザ相談をはじめ、投資用・居住用不動産の物件紹介、購入手続きまでトータルにサポート。現地提携パートナーと連携し、日本での新生活を全面的にバックアップします。',
+                biz3Tag: '医療渡航支援',
+                biz3Img: '日本医療イメージ',
+                biz3Title: '日本医療ツーリズム（赴日医療）',
+                biz3Desc: '日本の高度医療機関とのネットワークを活かし、中国人患者様の渡航手配、医療機関選定、通訳手配、滞在サポートまで一貫して提供。健康診断、治療、再生医療など幅広いニーズに対応いたします。',
+                aboutLabel: 'ABOUT US',
+                aboutTitle: '会社概要',
+                aboutP1: 'Toki Trading は、「日本の質を、世界へ」をミッションに掲げ、日本と中国の架け橋となる総合貿易・コンサルティング企業です。',
+                aboutP2: '健康食品輸出、留学・不動産支援、医療ツーリズムの3事業を中核に、お客様一人ひとりに寄り添った高品質なサービスを提供。日本各地の信頼できるパートナーとともに、確かな実績を積み重ねています。',
+                aboutFeat1: '安心の品質管理',
+                aboutFeat2: '多言語サポート',
+                aboutFeat3: '迅速な対応',
+                aboutFeat4: '信頼のネットワーク',
+                aboutP3: '東京都中央区所在 | 貿易登録番号：TK-000000',
+                footerAddr: '〒104-0000 東京都中央区銀座1-2-3<br>　トキトレーディングビル5F',
+                footerTel: 'TEL: 03-0000-0000',
+                footerEmail: 'Email: info@tokitrading.co.jp',
+                footerHours: '営業時間: 10:00〜18:00 (土日祝除く)',
+                footerBiz: '事業案内',
+                footerBiz1: '健康食品卸',
+                footerBiz2: '留学・不動産サポート',
+                footerBiz3: '医療ツーリズム',
+                footerInfo: '各種情報',
+                footerPrivacy: 'プライバシーポリシー',
+                footerLegal: '特定商取引法に基づく表記',
+                footerContactLink: 'お問い合わせ',
+                footerFollow: '公式アカウント',
+                footerSocialText: '各種SNSで最新情報を発信中'
+            },
+            zh: {
+                navHome: '首页',
+                navBusiness: '业务介绍',
+                navAbout: '公司简介',
+                navContact: '联系我们',
+                heroBadge: '值得信赖的综合贸易伙伴',
+                heroTitle: '日本与中国，搭建坚实的桥梁',
+                heroSub: '健康食品出口 · 留学不动产咨询 · 赴日医疗支援',
+                heroBtn1: '查看业务',
+                heroBtn2: '联系我们',
+                stat1Num: '200',
+                stat1Label: '合作企业',
+                stat2Num: '5000',
+                stat2Label: '经手商品数',
+                stat3Num: '800',
+                stat3Label: '留学支援实绩',
+                stat4Num: '150',
+                stat4Label: '合作医疗机构',
+                bizLabel: 'OUR SERVICES',
+                bizTitle: '业务介绍',
+                bizSub: '三大核心业务',
+                biz1Tag: '进出口批发',
+                biz1Img: '健康食品概念图',
+                biz1Title: '健康食品·保健品批发销售',
+                biz1Desc: '精选日本国内健康食品、功能性标示食品、保健品，面向中国市场出口及批发。与品质管理完善的制造商建立强大网络，稳定供应安全可靠的产品。',
+                biz2Tag: '咨询服务',
+                biz2Img: '留学·不动产概念图',
+                biz2Title: '留学·不动产咨询',
+                biz2Desc: '提供赴日留学手续支持、学校选择、签证咨询，以及投资·居住用不动产的推荐和购买手续等全方位服务。与当地合作方紧密协作，全面支持您在日新生活。',
+                biz3Tag: '医疗出行支援',
+                biz3Img: '日本医疗概念图',
+                biz3Title: '日本医疗旅游（赴日医疗）',
+                biz3Desc: '利用与日本先进医疗机构的网络，为中国患者提供境外出行的安排、医疗机构选择、翻译陪同、停留支持等一站式服务。满足体检、治疗、再生医疗等广泛需求。',
+                aboutLabel: 'ABOUT US',
+                aboutTitle: '公司简介',
+                aboutP1: 'Toki Trading 以"将日本的品质，带给世界"为使命，成为连接日本与中国的综合性贸易与咨询公司。',
+                aboutP2: '以健康食品出口、留学·不动产支援、医疗旅游三大事业为核心，贴近每位客户，提供高品质服务。与日本各地值得信赖的伙伴一起，积累着扎实的业绩。',
+                aboutFeat1: '安心的品质管理',
+                aboutFeat2: '多语言支持',
+                aboutFeat3: '快速响应',
+                aboutFeat4: '信赖的网络',
+                aboutP3: '位于东京都中央区 | 贸易注册号：TK-000000',
+                footerAddr: '〒104-0000 东京都中央区银座1-2-3<br>　Toki Trading大厦5楼',
+                footerTel: '电话: 03-0000-0000',
+                footerEmail: '邮箱: info@tokitrading.co.jp',
+                footerHours: '营业时间: 10:00〜18:00 (周末节假日除外)',
+                footerBiz: '业务导航',
+                footerBiz1: '健康食品批发',
+                footerBiz2: '留学·不动产支援',
+                footerBiz3: '医疗旅游',
+                footerInfo: '各类信息',
+                footerPrivacy: '隐私政策',
+                footerLegal: '根据特定商交易法的表述',
+                footerContactLink: '联系我们',
+                footerFollow: '官方账号',
+                footerSocialText: '在各社交媒体发布最新信息'
+            },
+            en: {
+                navHome: 'Home',
+                navBusiness: 'Services',
+                navAbout: 'About Us',
+                navContact: 'Contact',
+                heroBadge: 'Your Trusted Trading Partner',
+                heroTitle: 'Bridging Japan and China with Trust',
+                heroSub: 'Health Food Export · Study & Real Estate Consulting · Medical Tourism',
+                heroBtn1: 'Our Services',
+                heroBtn2: 'Contact Us',
+                stat1Num: '200',
+                stat1Label: 'Partner Companies',
+                stat2Num: '5000',
+                stat2Label: 'Products Handled',
+                stat3Num: '800',
+                stat3Label: 'Study Support Cases',
+                stat4Num: '150',
+                stat4Label: 'Medical Partners',
+                bizLabel: 'OUR SERVICES',
+                bizTitle: 'Our Services',
+                bizSub: 'Three Core Businesses',
+                biz1Tag: 'Import & Wholesale',
+                biz1Img: 'Health Food Concept',
+                biz1Title: 'Health Food & Supplement Wholesale',
+                biz1Desc: 'Exporting and wholesaling carefully selected Japanese health foods, functional foods, and supplements to the Chinese market. Through a robust network with quality-assured manufacturers, we provide stable supply of safe products.',
+                biz2Tag: 'Consulting',
+                biz2Img: 'Study Abroad & Real Estate Concept',
+                biz2Title: 'Study Abroad & Real Estate Consulting',
+                biz2Desc: 'Full support for study abroad in Japan: application assistance, school selection, visa consultation. Also cover investment/residential real estate introduction and purchase procedures. We back your new life in Japan with local partners.',
+                biz3Tag: 'Medical Travel Support',
+                biz3Img: 'Medical Tourism Concept',
+                biz3Title: 'Japan Medical Tourism (Inbound Medical Care)',
+                biz3Desc: 'One-stop service for Chinese patients: travel arrangement, hospital selection, interpreter arrangement and stay support, leveraging our network with advanced Japanese medical institutions. Covering health screenings, treatments, regenerative medicine, and more.',
+                aboutLabel: 'ABOUT US',
+                aboutTitle: 'About Us',
+                aboutP1: 'Toki Trading is a comprehensive trading and consulting company bridging Japan and China with the mission of "Bringing Japanese Quality to the World".',
+                aboutP2: 'Centered on three businesses: health food export, study/real estate support, and medical tourism, we deliver high-quality services tailored to each client, building solid achievements with trusted partners across Japan.',
+                aboutFeat1: 'Quality Assurance',
+                aboutFeat2: 'Multilingual Support',
+                aboutFeat3: 'Fast Response',
+                aboutFeat4: 'Trusted Network',
+                aboutP3: 'Headquarters in Chuo-ku, Tokyo | Trade Registration: TK-000000',
+                footerAddr: '1-2-3 Ginza, Chuo-ku, Tokyo 104-0000<br>　Toki Trading Building 5F',
+                footerTel: 'Tel: +81-3-0000-0000',
+                footerEmail: 'Email: info@tokitrading.co.jp',
+                footerHours: 'Hours: 10:00-18:00 (Weekdays)',
+                footerBiz: 'Services',
+                footerBiz1: 'Health Food Export',
+                footerBiz2: 'Study/Real Estate Support',
+                footerBiz3: 'Medical Tourism',
+                footerInfo: 'Information',
+                footerPrivacy: 'Privacy Policy',
+                footerLegal: 'Legal Notice',
+                footerContactLink: 'Contact Us',
+                footerFollow: 'Official Accounts',
+                footerSocialText: 'Follow us on social media'
+            }
+        };
+
+        const langLabels = { ja: 'JA', zh: 'ZH', en: 'EN' };
+        const langBtnMain = document.getElementById('langBtnMain');
+        const currentLangLabel = document.getElementById('currentLangLabel');
+        const langMenu = document.getElementById('langMenu');
+        const langDropdown = document.getElementById('langDropdown');
+        const langButtons = document.querySelectorAll('.lang-menu button');
+        const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+        const elementsAltTranslate = document.querySelectorAll('[data-i18n-alt]');
+
+        let currentLang = localStorage.getItem('lang') || 'ja';
+
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+            elementsToTranslate.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            elementsAltTranslate.forEach(el => {
+                const key = el.getAttribute('data-i18n-alt');
+                if (translations[lang] && translations[lang][key]) {
+                    el.setAttribute('alt', translations[lang][key]);
+                }
+            });
+            currentLangLabel.textContent = langLabels[lang];
+            langButtons.forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                if (btnLang === lang) {
+                    btn.classList.add('active-lang');
+                } else {
+                    btn.classList.remove('active-lang');
+                }
+            });
+            localStorage.setItem('lang', lang);
+        }
+
+        applyLanguage(currentLang);
+
+        langBtnMain.addEventListener('click', function(e) {
+            e.stopPropagation();
+            langMenu.classList.toggle('show');
+            langDropdown.classList.toggle('open');
+        });
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const lang = this.getAttribute('data-lang');
+                if (lang !== currentLang) {
+                    currentLang = lang;
+                    applyLanguage(lang);
+                }
+                langMenu.classList.remove('show');
+                langDropdown.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!langDropdown.contains(e.target)) {
+                langMenu.classList.remove('show');
+                langDropdown.classList.remove('open');
+            }
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
