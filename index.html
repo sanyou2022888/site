@@ -644,6 +644,54 @@
             line-height: 2;
         }
 
+        /* 代表取締役紹介 */
+        .representative {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #eef2f7;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .rep-photo {
+            flex-shrink: 0;
+        }
+
+        .rep-photo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0066a1;
+            box-shadow: 0 4px 15px rgba(0,102,161,0.2);
+        }
+
+        .rep-info {
+            text-align: left;
+        }
+
+        .rep-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a3c4a;
+            margin-bottom: 4px;
+        }
+
+        .rep-title {
+            font-size: 0.9rem;
+            color: #0066a1;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
         .about-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -874,6 +922,21 @@
                 right: -10px;
                 min-width: 120px;
             }
+
+            .representative {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .rep-info {
+                text-align: center;
+            }
+
+            .rep-photo img {
+                width: 100px;
+                height: 100px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1059,6 +1122,18 @@
             <div class="about-content">
                 <p data-i18n="aboutP1">三友株式会社は、株式会社インターテクノの中国区代理であり、その委託を受けて、中国企業向けの営業活動、販路開拓及び販売支援業務を順次展開しております。</p>
                 <p data-i18n="aboutP2">健康食品輸出、留学・不動産支援、医療ツーリズムの3事業を中核に、お客様一人ひとりに寄り添った高品質なサービスを提供。日本各地の信頼できるパートナーとともに、確かな実績を積み重ねています。</p>
+                
+                <!-- 代表取締役紹介 -->
+                <div class="representative">
+                    <div class="rep-photo">
+                        <img src="img/user1.webp" alt="代表取締役" data-i18n-alt="repAlt">
+                    </div>
+                    <div class="rep-info">
+                        <div class="rep-name" data-i18n="repName">代表取締役：福原 曜一</div>
+                        <div class="rep-title" data-i18n="repTitle">Representative Director</div>
+                    </div>
+                </div>
+
                 <div class="about-features">
                     <div class="about-feature">
                         <i class="fas fa-check-circle"></i>
@@ -1088,7 +1163,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4><i class="fas fa-globe-asia"></i> 三友株式会社</h4>
-					<p><i class="fas fa-map-pin"></i> <span data-i18n="footerZip">〒170-0002</span></p>
+                    <p><i class="fas fa-map-pin"></i> <span data-i18n="footerZip">〒170-0002</span></p>
                     <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footerAddr">東京都豊島区巢鴨4丁目22番4号</span></p>
                     <p><i class="fas fa-phone-alt"></i> <span data-i18n="footerTel">TEL: 081-03-65551637</span></p>
                     <p><i class="fas fa-fax"></i> <span data-i18n="footerFax">FAX: 03-6811-7523</span></p>
@@ -1181,7 +1256,10 @@
                 aboutFeat3: '迅速な対応',
                 aboutFeat4: '信頼のネットワーク',
                 aboutP3: '東京都豊島区所在 | 貿易登録番号：TK-000000',
-				footerZip: '〒170-0002',
+                repAlt: '代表取締役写真',
+                repName: '代表取締役：福原 曜一',
+                repTitle: 'Representative Director',
+                footerZip: '〒170-0002',
                 footerAddr: '東京都豊島区巢鴨4丁目22番4号',
                 footerTel: 'TEL: 081-03-65551637',
                 footerFax: 'FAX: 03-6811-7523',
@@ -1250,7 +1328,10 @@
                 aboutFeat3: '快速响应',
                 aboutFeat4: '信赖的网络',
                 aboutP3: '位于东京都丰岛区 | 贸易注册号：TK-000000',
-				footerZip: '邮编: 170-0002',
+                repAlt: '代表董事照片',
+                repName: '代表董事：福原 曜一',
+                repTitle: 'Representative Director',
+                footerZip: '邮编: 170-0002',
                 footerAddr: '东京都丰岛区巢鸭4丁目22番4号',
                 footerTel: '电话: 081-03-65551637',
                 footerFax: '传真: 03-6811-7523',
@@ -1319,7 +1400,10 @@
                 aboutFeat3: 'Fast Response',
                 aboutFeat4: 'Trusted Network',
                 aboutP3: 'Headquarters in Toshima-ku, Tokyo | Trade Registration: TK-000000',
-				footerZip: 'Postal Code: 170-0002',
+                repAlt: 'Representative Director Photo',
+                repName: 'Representative Director: Fukuhara Yoichi',
+                repTitle: 'Representative Director',
+                footerZip: 'Postal Code: 170-0002',
                 footerAddr: '4-22-4 Sugamo, Toshima-ku, Tokyo',
                 footerTel: 'Tel: +81-3-65551637',
                 footerFax: 'Fax: +81-3-6811-7523',
