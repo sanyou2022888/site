@@ -596,6 +596,7 @@
             transform: translateY(-4px);
         }
 
+        /* 汎用ライセンス画像枠 */
         .license-img {
             width: 100%;
             height: 180px;
@@ -609,6 +610,12 @@
             justify-content: center;
             color: #999;
             font-size: 0.9rem;
+        }
+
+        /* imgタグ用の上書き */
+        img.license-img {
+            display: block;
+            object-fit: contain;
         }
 
         .license-title {
@@ -1008,7 +1015,7 @@
         </div>
     </div>
 
-    <!-- ライセンス・許認可セクション -->
+    <!-- ライセンス・許認可セクション（最初の1枚だけ実際の画像を表示） -->
     <section class="licenses">
         <div class="container">
             <div class="section-header">
@@ -1019,18 +1026,22 @@
                 <div class="section-divider"></div>
             </div>
             <div class="licenses-grid">
+                <!-- 1枚目：実際の画像 -->
                 <div class="license-item">
-                    <div class="license-img" data-i18n="license1Placeholder">【貿易許可証画像】</div>
+                    <img class="license-img" src="img/license1.webp" alt="貿易許可証" data-i18n-alt="license1Name">
                     <div class="license-title" data-i18n="license1Name">貿易許可証</div>
                 </div>
+                <!-- 2枚目：プレースホルダー -->
                 <div class="license-item">
                     <div class="license-img" data-i18n="license2Placeholder">【食品衛生許可画像】</div>
                     <div class="license-title" data-i18n="license2Name">食品衛生許可証</div>
                 </div>
+                <!-- 3枚目：プレースホルダー -->
                 <div class="license-item">
                     <div class="license-img" data-i18n="license3Placeholder">【留学仲介認可画像】</div>
                     <div class="license-title" data-i18n="license3Name">留学仲介認可証</div>
                 </div>
+                <!-- 4枚目：プレースホルダー -->
                 <div class="license-item">
                     <div class="license-img" data-i18n="license4Placeholder">【医療コーディネート認可画像】</div>
                     <div class="license-title" data-i18n="license4Name">医療渡航支援登録証</div>
@@ -1155,7 +1166,6 @@
                 biz3Desc: '日本の高度医療機関とのネットワークを活かし、中国人患者様の渡航手配、医療機関選定、通訳手配、滞在サポートまで一貫して提供。健康診断、治療、再生医療など幅広いニーズに対応いたします。',
                 licenseLabel: 'LICENSES',
                 licenseTitle: '許認可・登録情報',
-                license1Placeholder: '【貿易許可証画像】',
                 license1Name: '貿易許可証',
                 license2Placeholder: '【食品衛生許可画像】',
                 license2Name: '食品衛生許可証',
@@ -1173,8 +1183,8 @@
                 aboutFeat4: '信頼のネットワーク',
                 aboutP3: '東京都豊島区所在 | 貿易登録番号：TK-000000',
                 footerAddr: '〒170-0002 東京都豊島区巢鴨四丁目22番4号',
-                footerTel: 'TEL: 070-92263598',
-                footerEmail: 'Email: sanyou2022888@hotmail.com',
+                footerTel: 'TEL: 03-0000-0000',
+                footerEmail: 'Email: info@sanyo-trading.co.jp',
                 footerHours: '営業時間: 10:00〜18:00 (土日祝除く)',
                 footerBiz: '事業案内',
                 footerBiz1: '健康食品卸',
@@ -1222,7 +1232,6 @@
                 biz3Desc: '利用与日本先进医疗机构的网络，为中国患者提供境外出行的安排、医疗机构选择、翻译陪同、停留支持等一站式服务。满足体检、治疗、再生医疗等广泛需求。',
                 licenseLabel: 'LICENSES',
                 licenseTitle: '许可・注册信息',
-                license1Placeholder: '【贸易许可证图片】',
                 license1Name: '贸易许可证',
                 license2Placeholder: '【食品卫生许可图片】',
                 license2Name: '食品卫生许可证',
@@ -1240,8 +1249,8 @@
                 aboutFeat4: '信赖的网络',
                 aboutP3: '位于东京都丰岛区 | 贸易注册号：TK-000000',
                 footerAddr: '〒170-0002 东京都丰岛区巢鸭四丁目22番4号',
-                footerTel: '电话: 070-92263598',
-                footerEmail: '邮箱: sanyou2022888@hotmail.com',
+                footerTel: '电话: 03-0000-0000',
+                footerEmail: '邮箱: info@sanyo-trading.co.jp',
                 footerHours: '营业时间: 10:00〜18:00 (周末节假日除外)',
                 footerBiz: '业务导航',
                 footerBiz1: '健康食品批发',
@@ -1289,7 +1298,6 @@
                 biz3Desc: 'One-stop service for Chinese patients: travel arrangement, hospital selection, interpreter arrangement and stay support, leveraging our network with advanced Japanese medical institutions. Covering health screenings, treatments, regenerative medicine, and more.',
                 licenseLabel: 'LICENSES',
                 licenseTitle: 'Licenses & Registrations',
-                license1Placeholder: '[Trade License Image]',
                 license1Name: 'Trade License',
                 license2Placeholder: '[Food Hygiene License Image]',
                 license2Name: 'Food Hygiene License',
@@ -1307,8 +1315,8 @@
                 aboutFeat4: 'Trusted Network',
                 aboutP3: 'Headquarters in Toshima-ku, Tokyo | Trade Registration: TK-000000',
                 footerAddr: '4-22-4 Sugamo, Toshima-ku, Tokyo 170-0002',
-                footerTel: 'Tel: 070-92263598',
-                footerEmail: 'Email: sanyou2022888@hotmail.com',
+                footerTel: 'Tel: +81-3-0000-0000',
+                footerEmail: 'Email: info@sanyo-trading.co.jp',
                 footerHours: 'Hours: 10:00-18:00 (Weekdays)',
                 footerBiz: 'Services',
                 footerBiz1: 'Health Food Export',
