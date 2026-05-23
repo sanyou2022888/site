@@ -576,10 +576,8 @@
         }
 
         .licenses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            display: flex;
+            justify-content:center;
         }
 
         .license-item {
@@ -590,6 +588,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             border: 1px solid #eef2f7;
             transition: transform 0.3s;
+			width:300px;
         }
 
         .license-item:hover {
