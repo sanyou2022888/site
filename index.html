@@ -545,16 +545,18 @@
             color: white;
         }
 
-        .stat-number {
-            font-size: 2.6rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .stat-number span {
-            color: #ffd166;
-        }
+        .stat-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 8px 0 4px;
+    color: white;
+}
+.stat-desc {
+    font-size: 0.82rem;
+    opacity: 0.75;
+    line-height: 1.5;
+    color: white;
+}
 
         .stat-label {
             font-size: 0.9rem;
@@ -1053,27 +1055,27 @@
     <div class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-handshake"></i></div>
-                    <div class="stat-number"><span data-i18n="stat1Num">200</span>+</div>
-                    <div class="stat-label" data-i18n="stat1Label">取引先企業</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-box"></i></div>
-                    <div class="stat-number"><span data-i18n="stat2Num">5000</span>+</div>
-                    <div class="stat-label" data-i18n="stat2Label">取扱商品数</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
-                    <div class="stat-number"><span data-i18n="stat3Num">800</span>+</div>
-                    <div class="stat-label" data-i18n="stat3Label">留学支援実績</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-hospital"></i></div>
-                    <div class="stat-number"><span data-i18n="stat4Num">150</span>+</div>
-                    <div class="stat-label" data-i18n="stat4Label">提携医療機関</div>
-                </div>
-            </div>
+			    <div class="stat-item">
+				        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+						        <div class="stat-title" data-i18n="stat1Title">広範なパートナー企業</div>
+								        <div class="stat-desc" data-i18n="stat1Desc">中国・日本にわたる幅広い企業ネットワークを構築</div>
+										    </div>
+											    <div class="stat-item">
+												        <div class="stat-icon"><i class="fas fa-box"></i></div>
+														        <div class="stat-title" data-i18n="stat2Title">多様な取扱商品</div>
+																        <div class="stat-desc" data-i18n="stat2Desc">健康食品・サプリメントを中心に豊富なラインナップ</div>
+																		    </div>
+																			    <div class="stat-item">
+																				        <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+																						        <div class="stat-title" data-i18n="stat3Title">安心の留学支援</div>
+																								        <div class="stat-desc" data-i18n="stat3Desc">学校選びから生活サポートまで一貫して対応</div>
+																										    </div>
+																											    <div class="stat-item">
+																												        <div class="stat-icon"><i class="fas fa-hospital"></i></div>
+																														        <div class="stat-title" data-i18n="stat4Title">信頼の医療連携</div>
+																																        <div class="stat-desc" data-i18n="stat4Desc">日本全国の先進医療機関と強固なネットワーク</div>
+																																		    </div>
+																																			</div>
         </div>
     </div>
 
@@ -1214,14 +1216,14 @@
                 heroSub: '健康食品輸出・留学不動産コンサル・医療渡航支援',
                 heroBtn1: '事業を見る',
                 heroBtn2: 'お問い合わせ',
-                stat1Num: '200',
-                stat1Label: '取引先企業',
-                stat2Num: '5000',
-                stat2Label: '取扱商品数',
-                stat3Num: '800',
-                stat3Label: '留学支援実績',
-                stat4Num: '150',
-                stat4Label: '提携医療機関',
+                stat1Title: '広範なパートナー企業',
+stat1Desc: '中国・日本にわたる幅広い企業ネットワークを構築',
+stat2Title: '多様な取扱商品',
+stat2Desc: '健康食品・サプリメントを中心に豊富なラインナップ',
+stat3Title: '安心の留学支援',
+stat3Desc: '学校選びから生活サポートまで一貫して対応',
+stat4Title: '信頼の医療連携',
+stat4Desc: '日本全国の先進医療機関と強固なネットワーク',
                 bizLabel: 'OUR SERVICES',
                 bizTitle: '事業内容',
                 bizSub: '3つの柱でビジネスを展開しています',
@@ -1286,14 +1288,14 @@
                 heroSub: '健康食品出口 · 留学不动产咨询 · 赴日医疗支援',
                 heroBtn1: '查看业务',
                 heroBtn2: '联系我们',
-                stat1Num: '200',
-                stat1Label: '合作企业',
-                stat2Num: '5000',
-                stat2Label: '经手商品数',
-                stat3Num: '800',
-                stat3Label: '留学支援实绩',
-                stat4Num: '150',
-                stat4Label: '合作医疗机构',
+                stat1Title: '广泛的合作企业',
+stat1Desc: '构建跨越中国与日本的广泛企业网络',
+stat2Title: '丰富的经手商品',
+stat2Desc: '以健康食品・保健品为主的丰富产品线',
+stat3Title: '安心的留学支援',
+stat3Desc: '从选校到生活支援一站式服务',
+stat4Title: '信赖的医疗合作',
+stat4Desc: '与日本全国的先进医疗机构保持紧密合作',
                 bizLabel: 'OUR SERVICES',
                 bizTitle: '业务介绍',
                 bizSub: '三大核心业务',
@@ -1358,14 +1360,14 @@
                 heroSub: 'Health Food Export · Study & Real Estate Consulting · Medical Tourism',
                 heroBtn1: 'Our Services',
                 heroBtn2: 'Contact Us',
-                stat1Num: '200',
-                stat1Label: 'Partner Companies',
-                stat2Num: '5000',
-                stat2Label: 'Products Handled',
-                stat3Num: '800',
-                stat3Label: 'Study Support Cases',
-                stat4Num: '150',
-                stat4Label: 'Medical Partners',
+                stat1Title: 'Extensive Partner Network',
+stat1Desc: 'A broad corporate network spanning China and Japan',
+stat2Title: 'Diverse Product Range',
+stat2Desc: 'Rich lineup centered on health foods and supplements',
+stat3Title: 'Reliable Study Support',
+stat3Desc: 'End-to-end support from school selection to daily life',
+stat4Title: 'Trusted Medical Partnerships',
+stat4Desc: 'Strong network with leading medical institutions across Japan',
                 bizLabel: 'OUR SERVICES',
                 bizTitle: 'Our Services',
                 bizSub: 'Three Core Businesses',
